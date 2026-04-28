@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-inter);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 3);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: oklch(0.7 0.15 210); /* Electric Blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.9 0.05 250); /* Indigo tint */
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.6 0.2 25);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.7 0.15 210);
+  --radius: 1rem;
+}
+
+.dark {
+  --background: oklch(0.1 0 0); /* Blackish */
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0.01 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0.01 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.75 0.18 215); /* Bright Electric Blue */
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.18 0.02 240);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.18 0.02 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.25 0.1 260); /* Deep Indigo */
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.5 0.2 25);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.75 0.18 215);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-primary/30;
+  }
+}
+
+/* Force hide cursor everywhere */
+*, *::before, *::after, html, body, a, button, input, textarea, select {
+  cursor: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-background/60 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px -5px var(--primary);
+}
