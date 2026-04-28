@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import companyData from "@/data/company.json"
+import { Logo } from "@/components/ui/logo"
 
 export function Footer() {
   return (
@@ -11,10 +12,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">П</span>
-              </div>
-              <span className="text-xl font-black tracking-tighter uppercase">Парсек</span>
+              <Logo className="w-44 h-20 transition-all group-hover:scale-105 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]" />
             </Link>
             <p className="max-w-md text-muted-foreground leading-relaxed">
               {companyData.description}
@@ -36,7 +34,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="text-muted-foreground text-sm">ИНН: {companyData.contacts.inn}</li>
               <li className="text-muted-foreground text-sm">ОГРН: {companyData.contacts.ogrn}</li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Политика конфиденциальности</Link></li>
+              <li><Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm underline-offset-4 hover:underline">Политика конфиденциальности</Link></li>
             </ul>
           </div>
         </div>

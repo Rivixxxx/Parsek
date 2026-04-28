@@ -7,6 +7,8 @@ import { Sun, Moon, Menu, X, Phone } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/ui/logo"
+import companyData from "@/data/company.json"
 
 const navItems = [
   { name: "О компании", href: "#about" },
@@ -38,12 +40,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.5)] group-hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] transition-all">
-            <span className="text-primary-foreground font-bold text-xl">П</span>
-          </div>
-          <span className="text-2xl font-black tracking-tighter uppercase hidden sm:block">
-            Парсек
-          </span>
+          <Logo className="w-32 h-16 transition-all group-hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
         </Link>
 
         {/* Desktop Nav */}
@@ -73,12 +70,14 @@ export function Navbar() {
 
           <Button className="hidden lg:flex gap-2 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
             <Phone className="h-4 w-4" />
-            +7 (4752) 00-00-00
+            {companyData.contacts.phone}
           </Button>
 
           <button
-            className="md:hidden"
+            className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Закрыть меню" : "Открыть меню"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>

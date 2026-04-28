@@ -2,9 +2,10 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { ArrowRight, Satellite } from "lucide-react"
 import { Starfield } from "./starfield"
+import { cn } from "@/lib/utils"
 
 export function Hero() {
   return (
@@ -23,14 +24,14 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
         >
           <Satellite className="w-4 h-4 animate-bounce" />
-          Лидер телематики в Тамбовской области
+          Оптовые поставки промышленного оборудования
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50 leading-[0.9]"
+          className="text-5xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50 leading-tight"
         >
           НАДЁЖНЫЕ РЕШЕНИЯ <br />
           <span className="text-primary drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">ДЛЯ ВАШЕГО БИЗНЕСА</span>
@@ -42,7 +43,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10"
         >
-          Оптовые поставки высокотехнологичного оборудования: тахографы, ГЛОНАСС/GPS мониторинг и системы контроля топлива.
+          Прямые поставки электротехнического оборудования, машин и аппаратуры. Технологические решения для вашего предприятия.
         </motion.p>
 
         <motion.div
@@ -51,19 +52,25 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button 
-            size="lg" 
-            asChild
-            className="h-14 px-8 text-lg font-bold group shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+          <a 
+            href="#contact" 
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-14 px-8 text-lg font-bold group shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center justify-center gap-2"
+            )}
           >
-            <a href="#contact" className="flex items-center justify-center gap-2">
-              Получить КП
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-          <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg font-bold border-primary/30 hover:bg-primary/5">
-            <a href="#products" className="flex items-center justify-center gap-2">Смотреть каталог</a>
-          </Button>
+            Получить КП
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a 
+            href="#products" 
+            className={cn(
+              buttonVariants({ size: "lg", variant: "outline" }),
+              "h-14 px-8 text-lg font-bold border-primary/30 hover:bg-primary/5 flex items-center justify-center gap-2"
+            )}
+          >
+            Смотреть каталог
+          </a>
         </motion.div>
       </div>
 

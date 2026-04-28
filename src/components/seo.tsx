@@ -6,8 +6,8 @@ export function SEO() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": companyData.name,
-    "url": "https://parsek-tmb.ru",
-    "logo": "https://parsek-tmb.ru/logo.png",
+    "url": companyData.websiteUrl,
+    "logo": `${companyData.websiteUrl}/logo.png`,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": companyData.contacts.phone,
@@ -27,7 +27,7 @@ export function SEO() {
 
   return (
     <Script
-      id="faq-schema"
+      id="organization-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />

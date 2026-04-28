@@ -4,12 +4,12 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800", title: "Логистический центр" },
-  { src: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=800", title: "Мониторинг транспорта" },
-  { src: "https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&q=80&w=800", title: "Установка оборудования" },
-  { src: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800", title: "Спецтехника" },
-  { src: "https://images.unsplash.com/photo-1494412574643-ff11b865c1c3?auto=format&fit=crop&q=80&w=800", title: "Автопарк клиента" },
-  { src: "https://images.unsplash.com/photo-1580674271209-40509a3ecd05?auto=format&fit=crop&q=80&w=800", title: "Контроль топлива" },
+  { src: "/gallery/gallery-1.png", title: "Логистический центр" },
+  { src: "/gallery/gallery-2.png", title: "Мониторинг транспорта" },
+  { src: "/gallery/gallery-3.png", title: "Установка оборудования" },
+  { src: "/gallery/gallery-4.png", title: "Спецтехника" },
+  { src: "/gallery/gallery-5.png", title: "Автопарк клиента" },
+  { src: "/gallery/gallery-6.png", title: "Контроль топлива" },
 ]
 
 export function Gallery() {

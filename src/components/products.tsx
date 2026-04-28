@@ -32,6 +32,10 @@ export function Products() {
         }
       )
     }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
   }, [])
 
   return (
